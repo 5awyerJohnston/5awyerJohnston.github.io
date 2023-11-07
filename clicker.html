@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzcW1cPNiqvI-cU4_Ee2CdzD7fvbjssVcXdA:https://www.creativefabrica.com/wp-content/uploads/2023/08/27/Beautiful-Halloween-Background-Graphics-77831358-1.png&usqp=CAU");
+            background-repeat: no-repeat;
+            background-size: 1500px 800px;
+        }
+
+        p {
+            color: orange;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <p id="score"> score:0 </p>
+    <img id="pumpkin" src="https://www.pngmart.com/files/13/Halloween-Jack-O-Lantern-Transparent-Background.png">
+    <button id="upgrade">Upgrade ($5)</button>
+    <button id="autoClick"> Autoclicker ($5) </button>
+</body>
+<script>
+    document.getElementById("pumpkin").addEventListener("click", addScore)
+    document.getElementById("upgrade").addEventListener("click", upgrade)
+    var score = 2
+    var increase = 1
+   var cost = 5
+   var aclick = 2
+    
+
+    function addScore() {
+        document.getElementById("score").innerText = score
+        score = score + increase
+    }
+    
+    function upgrade() {
+        if (score>=cost){
+            score=score-cost
+        }
+        document.getElementById("score").innerText = score 
+increase = 3      
+    }
+    
+    document.getElementById("autoClick").addEventListener("click", autoClicks)
+    function autoClicks(){
+        if(score >=cost){
+        setInterval(addScore, .2)
+    score = score + aclick
+        }
+            document.getElementById("score").innerText
+    }
+
+</script>
+
+</html>
+<script>
